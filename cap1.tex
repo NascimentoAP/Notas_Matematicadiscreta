@@ -4,18 +4,20 @@
 
 \chapter{Matemática Discreta}
 
-\section{Notação}
-\subsection{Somatório}
+\section{Notações}
  Para representar somas finitas ou infinitas fazemos uso do símbolo
  \begin{equation}
      \sum_{i=1}^{n} x_i = x_1 + x_2 + x_3 + \cdots + x_{n-1} + x_{n}.
  \end{equation}
-\exemplo
+\begin{example}
+
 \begin{enumerate}
     \item [(i)] $\displaystyle \sum_{i=1}^{5} x_i = x_1 + x_2 + x_3 + x_{4} + x_{5}$;
     \item [(ii)] $\displaystyle \sum_{i=1}^{5} x_i = x_1 + x_2 + x_3 + x_{4} + \cdots + x_{10}$;
     \item [(iii)] $\displaystyle \sum_{i=1}^{300} x_i = x_1 + x_2 + x_3 + \cdots+ x_{299} + x_{300}$.
 \end{enumerate}
+
+\end{example}
 \quad Em algum momento podemos nos deparar com:
 \begin{equation}
 \label{serie}
@@ -32,8 +34,7 @@ Sejam os números reais $x_i$ e $y_i$ com $i = 1,2,3,\cdots,n$ escalares $\alpha
      
 \end{enumerate}
 
-\section{Produtório}
-Muitas vezes será necessário representarmos o produto de $n$ números, da sequência $\{x_n\}_{n\in \mathbb{N}}$, que será feita pelo símbolo.
+Será necessário representarmos o produto de $n$ números, da sequência $\{x_n\}_{n\in \mathbb{N}}$, que será feita pelo símbolo.
 
 \begin{equation}
     \prod_{i=1}^{n} x_i = x_1x_2x_3\cdots x_n,
@@ -69,10 +70,8 @@ Considere novamente uma sequência de número reais $\{x_n\}_{n\in \mathbb{N}}$
 \end{enumerate}
 \inic Apresentaremos agora alguns exemplos de como aplicar esses passos.
 
-\noindent \exemplo
-
-\begin{enumerate}
-    \item [(i)] Prove as identidades abaixo (o zero aqui não é natural):
+\begin{example}
+ Prove as identidades abaixo (o zero aqui não é natural):
     \begin{enumerate}
         \item [(a)] $1+2+3+\cdots+n = \frac{n(n+1)}{2}, \forall n \in \mathbb{N}$;
         \item [(b)] $1+3+5+\cdots+2n-1 = n^2, \forall n \in \mathbb{N}$
@@ -81,7 +80,7 @@ Considere novamente uma sequência de número reais $\{x_n\}_{n\in \mathbb{N}}$
         \item [(e)] $4^n >n^4$, $\forall n \geq 5$;
         \item [(f)] $n! > n^3$, $\forall n \geq 6$.
     \end{enumerate}
-\end{enumerate}
+\end{example}
 \inic Provaremos aqui as letras (a) e (e), os demais exemplos ficam como exercícios para o leitor.
 
 \begin{proof}
@@ -142,13 +141,13 @@ $$\left(\frac{n+1}{n}\right)^n \leq n.$$
 \noindent [4] Critique a seguinte argumentação: Quer-se provar que todo número natural é pequeno. Evidentemente, 1 é um número pequeno. Além disso, se $\mathnormal{n}$ for pequeno, $\mathnormal{n}+1$ também será, pois nãe se torna grande um número pequeno somando-lhe apenas uma unidade. Logo, por indução, todo número natural é pequeno.
 
 \section{Recorrências}	
-\inic Este capítulo está voltado a mostra a importância e as aplicações do pensamento recursivo. Matematicamente recorrências são usadas em diversas áreas como: Probabilidade, Análise Matemática, Combinatória. O enfoque é dar uma introdução a esse pensamento, mostrando as recorrências mais conhecidas. Apresentamos também a visão de Progressões aritméticas e geométricas tendo como base a as recorrências. Temos estas notas baseada principalmente em \cite{Marcus} e \cite{Castro}.
+\inic  Nesta seção nos voltaremos a mostrar a importância e as aplicações do pensamento recursivo. Matematicamente recorrências são usadas em diversas áreas como: Probabilidade, Análise Matemática, Combinatória. O enfoque é dar uma introdução a esse pensamento, mostrando as recorrências mais conhecidas. Apresentamos também a visão de Progressões aritméticas e geométricas tendo como base a as recorrências. Temos estas notas baseada principalmente em \cite{Marcus} e \cite{Castro}.
 
 \begin{defin}
 	Uma relação de recorrência é aquela que cada termo da sequência, a partir de um certo termo, é determinado em função dos termos anteriores.
 \end{defin}
 
-\noindent \exemplo Considere uma sequência $(x_n)$ definida por
+\begin{example} Considere uma sequência $(x_n)$ definida por
 	\begin{equation}
 		\begin{cases}
 		\label{PA12}
@@ -157,11 +156,13 @@ $$\left(\frac{n+1}{n}\right)^n \leq n.$$
 		\end{cases},
 	\end{equation}
 	é uma recorrência, pois para determinar cada $x_{n+1}$ (próximo termo) é necessário sabermos o termo $x_n$ (termo atual). Em particular (\ref{PA12}) é chamada de progressão aritmética de razão $r$ a qual será dada mais detalhes em seções posteriores.
+
+\end{example}
 	\section{Ordem de uma recorrência}
 	\begin{defin}
 		Dizemos que uma recorrência $R(n)$ é de ordem $k$ se $R(n+1)$ depende de $k$ termos anteriores.
 	\end{defin}
-	\noindent \exemplo Vamos classificar as recorrências abaixo, quanto à ordem
+	\begin{example} Vamos classificar as recorrências abaixo, quanto à ordem
 	\begin{enumerate}
 		\item[(a)] $\begin{cases}
 		x_1 = 1\\
@@ -181,28 +182,33 @@ $$\left(\frac{n+1}{n}\right)^n \leq n.$$
 		T(n) = 2T(n-1) + T(n-2) - [T(n-3)]^2 \,\, \forall n \geq 4
 		\end{cases}$, é uma recorrência de terceira ordem.
 	\end{enumerate}
-	\section{Solução} 
-	\begin{defin}
+
+\end{example}
+	\begin{defin}[Solução de uma Recorrência]
 		É uma expressão que depende apenas de $n$ e seus parâmetros, isto é, não depende de nenhum dos termos anteriores, e sim apenas do termo que estamos interessados em calcular.
 	\end{defin}
 	
-	\noindent \exemplo 
+	\begin{example} 
 	\begin{enumerate}
 		\item[(a)] $a_1 = a$ e $a_{n+1} = a_{n} + r$ possui como solução $a_n = a + (n-1)r$;
 		\item[(b)] $a_1 = a$ e $a_{n+1} = qa_{n}$ possui como solução $a_n = aq^{n-1}$.
 	\end{enumerate}
+
+\end{example}
 	\section{Recorrência linear}
 	É a recorrência dada por um modelo linear, isto é
 	\begin{equation}
 	\label{geral}
 		a_{n} = g(n)a_{n-1} + h(n).
 	\end{equation}
-	\exemplo 
+
+\begin{example} 
 	\begin{enumerate}
 		\item[(a)] $a_{n} = (n-1)a_{n-1} + n^2$;
 		\item[(b)] $a_{n} = (n+1)a_{n-1} + 30$;
 		\item[(c)] $a_{n} = 5na_{n-1} + 10n$.
 	\end{enumerate}
+\end{example}
 	\section{Recorrência linear homogênea}
 	É uma recorrência do tipo 
 	\begin{equation*}
@@ -227,7 +233,7 @@ $$\left(\frac{n+1}{n}\right)^n \leq n.$$
 	\end{equation}
 	\quad Logo a equação $\displaystyle a_{n}=a_1\prod_{i=1}^{n-1}g(i)$ é solução da recorrência linear homogênea.
 	
-	\noindent \exemplo Use a fórmula fechada, demonstrada acima para mostrar solucionar as recorrências
+	\begin{example} Use a fórmula fechada, demonstrada acima para mostrar solucionar as recorrências
 	\begin{enumerate}
 		\item[(a)] $a_{n} = na_{n-1} $;
 		\item[(b)] $a_{n} = 3a_{n-1}$;
@@ -235,6 +241,8 @@ $$\left(\frac{n+1}{n}\right)^n \leq n.$$
 		\item[(d)] $a_{n} = \left(\dfrac{n+1}{n-1}\right)^2a_{n-1}$;
 		\item[(e)] $a_{n} = \frac{1}{n}a_{n-1}$.
 	\end{enumerate}
+
+\end{example}
 	\quad Temos também uma forma semelhante de solucionar a recorrência linear quando $g(n)=1$, basta ao inves de multiplicarmos as linhas da equação (\ref{linhas}), nos somamos, isto é,
 	\begin{equation}
 	\label{linhas}
@@ -301,13 +309,15 @@ $$\left(\frac{n+1}{n}\right)^n \leq n.$$
  	 \end{equation}
  	 logo a solução para coeficientes constantes é dado pelo equação (\ref{aaa}).\\
  	 
- \noindent \exemplo Use a equação (\ref{aaa}) para solucionar as recorrências
+ \begin{example} Use a equação (\ref{aaa}) para solucionar as recorrências
  	 \begin{enumerate}
  	 	\item[(a)] $a_{n+1} = 3a_n + 5$;
  	 	\item[(b)] $a_{n+1} = 4a_n - 10$;
  	 	\item[(c)] $a_{n+1} = 10a_n -1$;
  	 	\item[(d)] $a_{n+1} = 2(a_n - 12)$.
  	 \end{enumerate} 
+
+\end{example}
  	 
 \inic O exercícios aplicados desta seção estão no final do capítulo. Resolveremos o item (a), fazendo o uso da condição de contorno $a_1 = 2$, e deixamos os demais a cargo do leitor, como exercício os demais itens. Usaremos diretamente a equação (\ref{aaa}), mas para termos ideia do comportamento da recorrência, construiremos alguns termos,
 
@@ -385,13 +395,15 @@ $$2a_n = a_{n+1} + a_{n-1} \Rightarrow a_n = \frac{a_{n+1}+ a_{n-1}}{2}$$.
 \label{termo1}
  a_n = a_1 + (n-1)r.
 \end{equation}
-\noindent \exemplo
+\begin{example}
 \begin{enumerate}
     \item [(i)] Dada a PA $a_1 = 2$ e $r=10$, para determinar o 500º termos basta usarmos a expressão (\ref{termo1}) logo
     $$a_{500} = 2 + (500-1)10 = 4992;$$
     \item[(ii)] Se uma PA tem $r=7$ e $a_{35} = 17$, para determinar o primeiro termo temos
     $$a_{35} = a_1 + (35-1)7 \Rightarrow 17 = a_1 + 238 \Rightarrow a_1 = -221.$$
 \end{enumerate}
+
+\end{example}
 \subsection{Soma de $n$ termos}
 Aqui estamos preocupados em determinar a soma de $n$ termos de uma PA, isto é, queremos uma fórmula que dependa de $n$ para somarmos até quantos termos quisermos, para isso temos a seguinte conjectura, expressada pela PA $a_n$
 $$a_n = (1,2,3,4,5,6,7,8,9,10),$$
@@ -497,7 +509,7 @@ $$a_n = a_1q^{n-1}.$$
 
 \noindent \textbf{Observação.} A razão de uma PG pode ser determinada pela expressão $\displaystyle q = \frac{a_n}{a_{n-1}} = \frac{a_{n+1}}{a_n}$.
 
-\noindent \exemplo
+\begin{exemple}
 \begin{enumerate}
     \item [(i)] Na PG $a_1 = 2$ e $q=3$ para calcular o termo $a_{10}$ temos $a_{10} = 2.3^{9}$;
     \item[(ii)] Vamos mostrar como se interpolam elementos de uma PG, isto é, sejam $a_1=a$ e $a_n=b$ com $n=k+2$. Assim temos por objetivo determinar os termos centrais desta PG e para isso calculamos a razão
@@ -513,6 +525,7 @@ $$a_n = a_1q^{n-1}.$$
 \end{enumerate}
 \subsection{Soma dos termos}
 \inic O método para demonstrar a soma dos termos de uma PG é bem elegante e pouco diferente do que usamos para PA, de fato considere o Teorema \ref{teoPG} a seguir.
+\end{exemple}
 
 \begin{teo}
 \label{teoPG}
@@ -575,7 +588,7 @@ a expressão $(\star)$ converge à 0 se $0<q<1$ e vai para infinito se $q>1$, lo
 \end{equation}
 \end{proof}
 \inic Vale apena ressaltar a velocidade de convergência do limite $(\star)$, pois este vai a zero à ordem exponencial.\\
-\noindent \exemplo
+\begin{example}
 \begin{enumerate}
     \item [(i)] Na PG $a_1 = 5$ e $q = 3$ vamos calcular a soma $S_6= \frac{5(1-3^6)}{1-3} = 1820.$
     \item[(ii)] Dado $S_3 = 21$ e $S_4 = 45$ e $a_1 = 3$ vamos determinar $S_5$, de fato considere $S_4 = \frac{3(1-q^4)}{1-q}$ e $S_3 = \frac{3(1-q^3)}{1-q}$ logo temos:
@@ -586,6 +599,8 @@ a expressão $(\star)$ converge à 0 se $0<q<1$ e vai para infinito se $q>1$, lo
     $$15 - 15q = 1 - q(7q-6) \Rightarrow -7q^2+21q -14 = 0 \Rightarrow q^2-3q +2 = 0$$
     que possui como raízes $q=1$ ou $q=2$, o valor que usaremos aqui será $q=2$ pois $q=1$ nos dará uma PG constante, logo $S_5 = \frac{3(1-2^5)}{1-2} = 93.$
 \end{enumerate}
+
+\end{example}
 
 \subsection{Produto dos $n$ termos}
 \inic Criaremos aqui uma expressão pra denotar o produto dos $n$ primeiros termos de uma PG, denotado por $P_n$, de acordo com a Proposição (\ref{propro})
@@ -676,7 +691,9 @@ sendo $h(n)$ e $g(n)$ funções de $n$. Não será nosso foco o estudo de recorr
     \begin{proof}
     Ver página 15 de (PEREIRA, 2015)
     \end{proof}
-\noindent \exemplo 
+\begin{example}
+\end{example}
+ 
 
 \inic Determine a fórmula fechada da recorrência $x_{n+1} = 10x_{n} - 24x_{n-1}$ com $x_1 = 1$ e $x_2 = -1$
 Primeiramente calcularemos as raízes do polinômio característico, de fato, temos a seguinte equivalencia: $x_{n+1} = \varphi^2$, $x_n = \varphi$ e $x_{n-1} = \varphi^0$, assim
