@@ -245,7 +245,7 @@ $$\left(\frac{n+1}{n}\right)^n \leq n.$$
 \end{example}
 	\quad Temos também uma forma semelhante de solucionar a recorrência linear quando $g(n)=1$, basta ao inves de multiplicarmos as linhas da equação (\ref{linhas}), nos somamos, isto é,
 	\begin{equation}
-	\label{linhas}
+	\label{linhas2}
 	\begin{cases}
 	a_1 = a_1\\
 	a_2 = a_1 + h(1)\\
@@ -509,7 +509,7 @@ $$a_n = a_1q^{n-1}.$$
 
 \noindent \textbf{Observação.} A razão de uma PG pode ser determinada pela expressão $\displaystyle q = \frac{a_n}{a_{n-1}} = \frac{a_{n+1}}{a_n}$.
 
-\begin{exemple}
+\begin{example}
 \begin{enumerate}
     \item [(i)] Na PG $a_1 = 2$ e $q=3$ para calcular o termo $a_{10}$ temos $a_{10} = 2.3^{9}$;
     \item[(ii)] Vamos mostrar como se interpolam elementos de uma PG, isto é, sejam $a_1=a$ e $a_n=b$ com $n=k+2$. Assim temos por objetivo determinar os termos centrais desta PG e para isso calculamos a razão
@@ -525,7 +525,7 @@ $$a_n = a_1q^{n-1}.$$
 \end{enumerate}
 \subsection{Soma dos termos}
 \inic O método para demonstrar a soma dos termos de uma PG é bem elegante e pouco diferente do que usamos para PA, de fato considere o Teorema \ref{teoPG} a seguir.
-\end{exemple}
+\end{example}
 
 \begin{teo}
 \label{teoPG}
@@ -701,7 +701,7 @@ Primeiramente calcularemos as raízes do polinômio característico, de fato, te
 \begin{align}
     x_{n+1} &= 10x_{n} - 24x_{n-1},\\
     \varphi^2 &= 10\varphi - 24,\\
-    \varphi^2 - 10\varphi + 24 &= 0, \label{polc}
+    \varphi^2 - 10\varphi + 24 &= 0,
 \end{align}
 basta solucionarmos as equação (\ref{polc}), que nos dará $\varphi_1 = 6$ e $\varphi_2 = 4$, substituindo na expressão do Teorema \ref{comb}, temos 
 \begin{align*}
